@@ -1,6 +1,7 @@
-language: bash
+langage: bash
 script:
-        - echo hello
-        - echo Travis CI test in .travis.yml
-        - ./same-test.sh
+        - echo kadai3
+        - echo Trevis CI test .trevis.yml
+        - ./kadai3-test.sh
+
 
