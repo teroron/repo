@@ -13,7 +13,11 @@ this program is automatically checked at Travis CI. you can see the result of te
 [![Build Status](https://travis-ci.org/teroron/repo.svg?branch=master)](https://travis-ci.org/teroron/repo)
 
 
-
+  
+  
+  
+####P.S.
+####最大公約数を求めるロジックとしては、yesコマンドにより出力される２つの数字を、awkコマンドによって現在の行数で割って、改行を間に入れ、grepにより小数を除き、同じ数が２回目に出てきたらそれを出力させている。
 
 
 
