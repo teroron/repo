@@ -6,7 +6,7 @@
 
 ERROR_EXIT(){
 	echo "不一致" >&2
-	rm -f /tmp/$$-*
+#	rm -f /tmp/$$-*
        exit 1
 }
 
@@ -38,7 +38,7 @@ rm /tmp/$$-ans /tmp/$$-result
 #test4: 一つ目の引数が数字では無いケース
 result_4=$(./kadai3.sh a 2)
 echo "$result_4" > /tmp/$$-result
-echo "一つ目の引数は数字ではありません"  > /tmp/$$-ans
+echo "一つ目の引数は不正です"  > /tmp/$$-ans
 diff /tmp/$$-ans /tmp/$$-result && echo "test1 OK"  || ERROR_EXIT "result error"
 rm /tmp/$$-ans /tmp/$$-result
 
@@ -46,7 +46,7 @@ rm /tmp/$$-ans /tmp/$$-result
 #test5:二つ目の引数が数字では無いケース
 result_5=$(./kadai3.sh 1 a)
 echo "$result_5" > /tmp/$$-result
-echo "二つ目の引数は数字ではありません"  > /tmp/$$-ans
+echo "二つ目の引数は不正です"  > /tmp/$$-ans
 diff /tmp/$$-ans /tmp/$$-result && echo "test5 OK"  || ERROR_EXIT "result error"
 rm /tmp/$$-ans /tmp/$$-result
 
@@ -61,11 +61,26 @@ rm /tmp/$$-ans /tmp/$$-result
 
 
 
+#test7:符号確認
+#result_7=$(./kadai3.sh -1 8)
+#echo "$result_7" > /tmp/$$-result
+#echo "不正" > /tmp/$$-ans
+#diff /tmp/$$-ans /tmp/$$-result && echo "test7 OK"  || ERROR_EXIT "result error"
+#rm /tmp/$$-ans /tmp/$$-result
+
+#test8:符号確認
+#result_8=$(./kadai3.sh 1 -8)
+#echo "$result_8" > /tmp/$$-result
+#echo "引数を正の整数にして下さい"  > /tmp/$$-ans
+#diff -i -b /tmp/$$-ans /tmp/$$-result && echo "test8 OK"  || ERROR_EXIT "result error"
+#rm /tmp/$$-ans /tmp/$$-result
 
 
-#test7:結果確認
-result_7=$(./kadai3.sh 1617 273)
-echo "$result_7" > /tmp/$$-result
+
+
+#test9:結果確認
+result_9=$(./kadai3.sh 1617 273)
+echo "$result_9" > /tmp/$$-result
 echo "最大公約数は
 21
 です！"  > /tmp/$$-ans
